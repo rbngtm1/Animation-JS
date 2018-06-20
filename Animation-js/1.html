@@ -1,0 +1,45 @@
+<html>
+   
+   <head>
+      <title>JavaScript Animation</title>
+      
+      <script type="text/javascript">
+         <!--
+		  
+            var imgObj = null;
+            var animate ;
+            
+            function init(){
+               imgObj = document.getElementById('myImage');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.top = '0px'; 
+            }
+            
+            function moveDown(){
+               imgObj.style.top = parseInt(imgObj.style.top) + 10 + 'px';
+               animate = setTimeout(moveDown,20); // call moveDown in 20msec
+			   
+            }
+            
+            function stop(){
+               clearTimeout(animate);
+               imgObj.style.top = '0px'; 
+            }
+            
+            window.onload =init;
+         //-->
+      </script>
+      
+   </head>
+   
+   <body>
+   
+      <form>
+         <img id="myImage" src="jpt.jpg" width = "300px"/>
+         <p>Click the buttons below to handle animation</p>
+         <input type="button" value="Start" onclick="moveDown();" />
+         <input type="button" value="Stop" onclick="stop();" />
+      </form>
+      
+   </body>
+</html>
